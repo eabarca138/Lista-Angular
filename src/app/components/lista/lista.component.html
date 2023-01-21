@@ -1,0 +1,18 @@
+<table class="table container mt-5">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="fw-bold" *ngFor="let student of StudentsList; index as i">
+            <th *ngIf="student.isActive == true" scope="row">{{i + 1}}</th>
+            <td *ngIf="student.isActive == true">{{student.name}}</td>
+            <td *ngIf="student.isActive == true">{{student.age}}</td>
+            <td *ngIf="student.isActive == true" [ngClass]="student.approved === 'Aprobado' ? 'text-success' : 'text-danger'">{{student.approved}}</td>
+        </tr>
+    </tbody>
+</table>
